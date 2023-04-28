@@ -49,6 +49,18 @@ function App() {
     // 승자에 대한 계산 값
     const winner = calculateWinner(currentState.squares);
 
+    // 이전 값으로 돌리기 위한 함수 선언
+    const moves = history.map((step, index) => {
+        const desc = index ? `Go to move #${index}` : `Go to Game Start`;
+        return (
+            <li key={index}>
+                <button>
+                    {desc}
+                </button>
+            </li>
+        )
+    });
+
     let status;
     if (winner !== null) {
         status = `Winner ${winner}`;
@@ -63,6 +75,9 @@ function App() {
             </div>
             <div className={"game-info"}>
                 <div className={"status"}>{status}</div>
+                <ol>
+                    {moves}
+                </ol>
             </div>
         </div>
     );
