@@ -18,6 +18,10 @@ class BoardClass extends Component {
 // 자식 Component에서 클릭 시 동작 시킬 function 정의
     handleClick(i) {
         const squares = this.state.squares.slice(); // 원본에는 영향을 주지 않는 상태에서 값을 가져오는 것 -> deep copy
+        // 이미 클릭이 되어 있는 경우와 승자가 있을 경우 업데이트 하지 않음
+        if (this.calculateWinner(squares) || squares[i]) {
+            return;
+        }
         // squares[i] = 'X'; // 클리 시 값 넣어주기
         squares[i] = this.state.xIsNext ? 'X' : 'O';
         // state 값을 변경

@@ -9,6 +9,10 @@ const Board = (props) => {
     // const status = `Next Player ${xIsNext ? 'X' : 'O'}`;
     const handleClick = (i) => {
         const newSquares = squares.slice();
+        // 이미 클릭이 되어 있는 경우와 승자가 있을 경우 업데이트 하지 않음
+        if (calculateWinner(newSquares) || newSquares[i]) {
+            return;
+        }
         newSquares[i] = xIsNext ? 'X' : 'O';
         setSquares(newSquares);
         setXIsNext(prevState => !prevState); // 이전 값을 읽어와서 값을 반전 시킨다.
