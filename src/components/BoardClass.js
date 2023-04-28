@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import SquareClass from "./SquareClass";
 import "./Board.css";
+
 class BoardClass extends Component {
 
     renderSquare(i) {
-        return <SquareClass/>;
+        return <SquareClass value={i} aprops={i + 1}/>;
     }
 
     render() {
