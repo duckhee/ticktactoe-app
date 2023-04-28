@@ -7,6 +7,7 @@ function App() {
     return (
         <div className="game">
             <div className={"game-board"}>
+                {/*<BoardClass/>*/}
                 <Board/>
             </div>
             <div className={"game-info"}>
