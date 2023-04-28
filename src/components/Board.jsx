@@ -4,11 +4,14 @@ import Square from "./Square";
 
 const Board = (props) => {
     const [squares, setSquares] = useState(Array(9).fill(null));
+    const [xIsNext, setXIsNext] = useState(true);
 
+    const status = `Next Player ${xIsNext ? 'X' : 'O'}`;
     const handleClick = (i) => {
         const newSquares = squares.slice();
-        newSquares[i] = 'X';
+        newSquares[i] = xIsNext ? 'X' : 'O';
         setSquares(newSquares);
+        setXIsNext(prevState => !prevState); // 이전 값을 읽어와서 값을 반전 시킨다.
     }
 
     const renderSquare = (i) => {
@@ -17,7 +20,7 @@ const Board = (props) => {
 
     return (
         <div>
-            <div className={"status"}>Next Player: X, O</div>
+            <div className={"status"}>{status}</div>
             <div className={"board-row"}>
                 {renderSquare(0)}
                 {renderSquare(1)}
