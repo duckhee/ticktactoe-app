@@ -1,12 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import BoardClass from "./components/BoardClass";
+import Board from "./components/Board";
 
 function App() {
     return (
         <div className="game">
             <div className={"game-board"}>
-                <BoardClass/>
+                <Board/>
             </div>
             <div className={"game-info"}>
                 game-info
