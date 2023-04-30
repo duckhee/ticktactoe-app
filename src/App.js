@@ -69,7 +69,7 @@ function App() {
         const desc = index ? `Go to move #${index}` : `Go to Game Start`;
         return (
             <li key={index}>
-                <button onClick={() => jumpTo(index)}>
+                <button className={"move-button"} onClick={() => jumpTo(index)}>
                     {desc}
                 </button>
             </li>
@@ -90,7 +90,7 @@ function App() {
             </div>
             <div className={"game-info"}>
                 <div className={"status"}>{status}</div>
-                <ol>
+                <ol style={{listStyle: "none"}}>
                     {moves}
                 </ol>
             </div>

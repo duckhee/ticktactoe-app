@@ -55,7 +55,7 @@ const Board = ({handleClick, winner, gameStatus, squares}) => {
     };
 
     return (
-        <div>
+        <div className={"board-wrapper"}>
             {/*<div className={"status"}>{status}</div>*/}
             {/*<div className={"status"}>{gameStatus}</div>*/}
             <div className={"board-row"}>
